@@ -28,3 +28,4 @@ C:\Users\fatih\Documents\ProgrammingApplications\Web Applications\ASP.NetCore\Fo
 C:\Users\fatih\Documents\ProgrammingApplications\Web Applications\ASP.NetCore\FormsApp\obj\Debug\net8.0\FormsApp.pdb
 C:\Users\fatih\Documents\ProgrammingApplications\Web Applications\ASP.NetCore\FormsApp\obj\Debug\net8.0\FormsApp.genruntimeconfig.cache
 C:\Users\fatih\Documents\ProgrammingApplications\Web Applications\ASP.NetCore\FormsApp\obj\Debug\net8.0\ref\FormsApp.dll
+C:\Users\fatih\Documents\ProgrammingApplications\Web Applications\ASP.NetCore\FormsApp\obj\Debug\net8.0\FormsApp.sourcelink.json
