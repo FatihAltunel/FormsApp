@@ -13,8 +13,12 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\fatih\\Documents\\ProgrammingApplications\\Web Applications\\ASP.NetCore\\FormsApp\\wwwroot\\img\\GalaxyS24.jpg",
-      "PackagePath": "staticwebassets\\img\\GalaxyS24.jpg"
+      "Id": "C:\\Users\\fatih\\Documents\\ProgrammingApplications\\Web Applications\\ASP.NetCore\\FormsApp\\wwwroot\\img\\256d24b7-f178-49ec-a326-43005eb73c28.jpg",
+      "PackagePath": "staticwebassets\\img\\256d24b7-f178-49ec-a326-43005eb73c28.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fatih\\Documents\\ProgrammingApplications\\Web Applications\\ASP.NetCore\\FormsApp\\wwwroot\\img\\9096e573-f96b-46d0-a826-b72ee90598ce.jpg",
+      "PackagePath": "staticwebassets\\img\\9096e573-f96b-46d0-a826-b72ee90598ce.jpg"
     },
     {
       "Id": "C:\\Users\\fatih\\Documents\\ProgrammingApplications\\Web Applications\\ASP.NetCore\\FormsApp\\wwwroot\\img\\MacBookAir.jpg",

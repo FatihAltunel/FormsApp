@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Y36WsfPlr4GZDIVFiRYf8Mh/Y0JnzBIkIfHQ2irQFFU=",
+  "Hash": "piQeDqrOMTK51z7nb9W/EFrUtlx634HPNzYu17EguPg=",
   "Source": "FormsApp",
   "BasePath": "_content/FormsApp",
   "Mode": "Default",
@@ -93,12 +93,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\fatih\\Documents\\ProgrammingApplications\\Web Applications\\ASP.NetCore\\FormsApp\\wwwroot\\img\\GalaxyS24.jpg",
+      "Identity": "C:\\Users\\fatih\\Documents\\ProgrammingApplications\\Web Applications\\ASP.NetCore\\FormsApp\\wwwroot\\img\\256d24b7-f178-49ec-a326-43005eb73c28.jpg",
       "SourceId": "FormsApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\fatih\\Documents\\ProgrammingApplications\\Web Applications\\ASP.NetCore\\FormsApp\\wwwroot\\",
       "BasePath": "_content/FormsApp",
-      "RelativePath": "img/GalaxyS24.jpg",
+      "RelativePath": "img/256d24b7-f178-49ec-a326-43005eb73c28.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -109,7 +109,26 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\GalaxyS24.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\256d24b7-f178-49ec-a326-43005eb73c28.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\fatih\\Documents\\ProgrammingApplications\\Web Applications\\ASP.NetCore\\FormsApp\\wwwroot\\img\\9096e573-f96b-46d0-a826-b72ee90598ce.jpg",
+      "SourceId": "FormsApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\fatih\\Documents\\ProgrammingApplications\\Web Applications\\ASP.NetCore\\FormsApp\\wwwroot\\",
+      "BasePath": "_content/FormsApp",
+      "RelativePath": "img/9096e573-f96b-46d0-a826-b72ee90598ce.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\9096e573-f96b-46d0-a826-b72ee90598ce.jpg"
     },
     {
       "Identity": "C:\\Users\\fatih\\Documents\\ProgrammingApplications\\Web Applications\\ASP.NetCore\\FormsApp\\wwwroot\\img\\imageAvaiable.jpg",

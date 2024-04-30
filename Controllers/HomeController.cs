@@ -40,16 +40,42 @@ public class HomeController : Controller
     }
 
     [HttpPost]
-    public IActionResult Create(Product model){
-        if(ModelState.IsValid){
+    public async Task<IActionResult> Create(Product model, IFormFile ProductImage){
+
+        var allowedExtensions= new[]{".jpg",".jpeg","png"};
+
+    if(ModelState.IsValid && ProductImage!=null){
+            var extension = Path.GetExtension(ProductImage.FileName); //ProductImage dosyasının ismindeki uzantıyı alır
+
+            if(!allowedExtensions.Contains(extension)){
+                ModelState.AddModelError("","Only '.png,' '.jpg' and '.jpeg' are allowed");
+                ViewBag.Categories = new SelectList(Repository.Categories,"CategoryId", "Name");
+                return View(model); 
+            }
+
+            var randomFileName = string.Format($"{Guid.NewGuid()}{extension}"); //uzantısı extension olan randım bir isim oluşturur
+
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img", randomFileName); //randomFileName isimli dosyayı wwwroot/img dizinine yapıştırır
+            using(var stream = new FileStream(path, FileMode.Create))
+                {
+                    await ProductImage.CopyToAsync(stream);
+                }
+
+            // using ifadesi: using ifadesi, bir kaynağı kullanıp işi bitirdikten sonra kaynağı otomatik olarak serbest bırakmak için kullanılır. Bu durumda, FileStream için kullanılacaktır.
+            // FileStream oluşturma: FileStream, bir dosyayı diskte oluşturmak, okumak, yazmak veya üzerine yazmak için kullanılır. path değişkeni, oluşturulacak dosyanın yolunu içerir ve FileMode.Create ile dosyanın oluşturulacağı ve varsa üzerine yazılacağı belirtilir. Bu satırda yeni bir dosya oluşturulur veya mevcut dosyanın üzerine yazılır.
+            // await ProductImage.CopyToAsync(stream): Bu, ProductImage adlı bir dosyanın içeriğini oluşturduğumuz stream adlı FileStream'e kopyalamak için kullanılır. ProductImage bir IFormFile nesnesidir ve bir dosyanın HTTP isteği sırasında sunucuya yüklenmesini temsil eder. CopyToAsync() metodu, ProductImage dosyasının içeriğini stream akışına asenkron olarak kopyalar. Dosya kopyalandıktan sonra, bu metot asenkron olarak tamamlanır ve işlem kontrol akışı devam eder.
+            // await ifadesi: await, asenkron bir işlemin tamamlanmasını beklemek için kullanılır. Bu durumda, dosya kopyalama işlemi tamamlanana kadar beklenir ve daha sonra işlem devam eder.
+            // stream kapatma: using bloğu bitince stream otomatik olarak kapatılır. Dosya kaynağına yapılan erişimlerin kapatılması, kaynağın güvenli bir şekilde serbest bırakılmasını sağlar. Bu da dosya kaynağının diğer işlemler için kullanılabilir hale gelmesini sağlar.
+
+            model.Image=randomFileName;
             model.ProductId=Repository.Products.Count()+1;
             Repository.CreateProduct(model);
             return RedirectToAction("Index");
-
-        }else{
+    }else{
             ViewBag.Categories = new SelectList(Repository.Categories,"CategoryId", "Name");
             return View(model); 
         }
-    }
+
+}
 
 }
