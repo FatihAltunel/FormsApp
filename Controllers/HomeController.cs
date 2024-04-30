@@ -2,6 +2,8 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using FormsApp.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.VisualBasic;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace FormsApp.Controllers;
 
@@ -11,20 +13,43 @@ public class HomeController : Controller
     public IActionResult Index(string searchString, string category)
     {
 
-        var Products = Repository.Products;
-
-        ViewBag.Categories = new SelectList(Repository.Categories, "CategoryId", "Name");
+        var products = Repository.Products;
 
         if(!String.IsNullOrEmpty(searchString)){
             ViewBag.searchString = searchString;    
-            Products = Products.Where(p => p.Name.ToLower().Contains(searchString.ToLower())).ToList();
+            products = products.Where(p => p.Name.ToLower().Contains(searchString.ToLower() )).ToList();
         }
 
         if(!String.IsNullOrEmpty(category) && category!="0"){
-            Products = Products.Where(p => p.CategoryId == int.Parse(category)).ToList();
+            products = products.Where(p => p.CategoryId == int.Parse(category)).ToList();
         }
 
-        return View(Products);
+
+        var model = new ProductViewModel(){
+            Products = products,
+            Categories = Repository.Categories,
+            SelectedCategory = string.IsNullOrEmpty(category) ? "0" : category
+        };
+
+        return View(model);
+    }
+    [HttpGet]
+    public IActionResult Create(){
+        ViewBag.Categories = new SelectList(Repository.Categories,"CategoryId", "Name");
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult Create(Product model){
+        if(ModelState.IsValid){
+            model.ProductId=Repository.Products.Count()+1;
+            Repository.CreateProduct(model);
+            return RedirectToAction("Index");
+
+        }else{
+            ViewBag.Categories = new SelectList(Repository.Categories,"CategoryId", "Name");
+            return View(model); 
+        }
     }
 
 }
