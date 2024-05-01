@@ -23,33 +23,42 @@
 </div>
 
 @if (Model != null && Model.Products != null && Model.Categories != null){
-<table class="table table-bordered trable-striped">
-    <thead>
-        <tr>
-            <th style="width:100px;">Product ID</th>
-            <th style="width:150px;">Product Image</th>
-            <th>Product Name</th>
-            <th style="width:100px;">Product Price</th>
-            <th style="width:150px;"></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach(var prd in Model.Products){
+
+<form asp-action="EditProducts" asp-controller="Home" method="post">
+    <table class="table table-bordered trable-striped">
+        <thead>
             <tr>
-                <td>@prd.ProductId</td>
-                <td>
-                    <img src="~/img/@(prd.Image ?? "imageAvaiable.jpg")" class="img-fluid"/>
-                </td>
-                <td>@prd.Name</td>
-                <td>@prd.Price₺</td>
-                <td>
-                    <a asp-action="Edit" asp-controller="Home" asp-route-id="@prd.ProductId" class="btn btn-sm btn-primary">Edit</a>
-                    <a asp-controller="Home" asp-action="Delete" asp-route-id="@prd.ProductId" class="btn btn-sm btn-danger">Delete</a>
-                </td>
+                <th style="width:100px;">Product ID</th>
+                <th style="width:150px;">Product Image</th>
+                <th>Product Name</th>
+                <th style="width:100px;">Product Price</th>
+                <th style="width:150px;"></th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @for(int i=0; i<Model.Products.Count(); i++){
+                <tr>
+                    <td>@Model.Products[i].ProductId</td>
+                    <input type="hidden" asp-for="@Model.Products[i].ProductId">
+                    <td>
+                        <img src="~/img/@(@Model.Products[i].Image ?? "imageAvaiable.jpg")" class="img-fluid"/>
+                    </td>
+                    <td>@Model.Products[i].Name</td>
+                    <td>@Model.Products[i].Price₺</td>
+                    <td>
+                        <p>is Product Active?</p>
+                        <input type="checkbox" asp-for="@Model.Products[i].IsActive"> 
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-controller="Home" asp-route-id="@Model.Products[i].ProductId" class="btn btn-sm btn-primary">Edit</a>
+                        <a asp-controller="Home" asp-action="Delete" asp-route-id="@Model.Products[i].ProductId" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+        <button class="btn btn-primary" type="submit">Save</button>
+</form>
 }else{
     <p>No products or categories available.</p>
 }
