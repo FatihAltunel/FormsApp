@@ -1,0 +1,15 @@
+@model Product
+@{
+    ViewData["Title"]="Delete Confirm";
+}
+
+<div>
+    <p>
+        Do you really want to delete @Model.Name ? 
+        <form action="" method="post">
+            <input type="hidden" asp-for="@Model.ProductId">
+            <button type="submit" class="btn btn-danger" >Yes, I do</button>
+            <a asp-action="Index" class="btn btn-primary" >No, I don't</a>
+        </form>
+    </p>
+</div>

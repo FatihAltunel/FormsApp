@@ -1,0 +1,41 @@
+@model Product
+@{
+    ViewData["Title"]="Edit";
+}
+
+<form asp-controller="Home" asp-action="Edit" method="post" enctype="multipart/form-data"> 
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <input type="hidden" asp-for="ProductId">
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Name</label>
+        <input asp-for="Name" class="form-control">
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Price" class="form-label">Price</label>
+        <input asp-for="Price" class="form-control">
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <input type="file" class="form-control" name="ProductImage" id="ProductImage">
+    </div>
+    <div>
+        <img src="~/img/@Model.Image" style="width:100px;">
+        <input type="hidden" asp-for="@Model.Image">
+    </div>
+    <div class="mb-3">
+        <label asp-for="CategoryId" class="form-label">Category</label>
+        <select asp-for="CategoryId" asp-items="@ViewBag.Categories" class="form-select">
+            <option value="">All</option>
+        </select>
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
+    </div>
+    <div class="mb-3 form-check">
+        <label asp-for="IsActive" class="form-check-label">is Active?</label>
+        <input asp-for="IsActive" class="form-check-input">
+        <span asp-validation-for="IsActive" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Edit</button>
+    <a asp-action="Index" asp-controller="Home" class="btn btn-danger">Back</a>
+</form>

@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\fatih\\Documents\\ProgrammingApplications\\Web Applications\\ASP.NetCore\\FormsApp\\wwwroot\\img\\03784ca0-b773-44d6-bb00-7dd797ef3fe8.jpg",
+      "PackagePath": "staticwebassets\\img\\03784ca0-b773-44d6-bb00-7dd797ef3fe8.jpg"
+    },
+    {
       "Id": "C:\\Users\\fatih\\Documents\\ProgrammingApplications\\Web Applications\\ASP.NetCore\\FormsApp\\wwwroot\\img\\256d24b7-f178-49ec-a326-43005eb73c28.jpg",
       "PackagePath": "staticwebassets\\img\\256d24b7-f178-49ec-a326-43005eb73c28.jpg"
     },
@@ -27,6 +31,14 @@
     {
       "Id": "C:\\Users\\fatih\\Documents\\ProgrammingApplications\\Web Applications\\ASP.NetCore\\FormsApp\\wwwroot\\img\\MacBookPro.png",
       "PackagePath": "staticwebassets\\img\\MacBookPro.png"
+    },
+    {
+      "Id": "C:\\Users\\fatih\\Documents\\ProgrammingApplications\\Web Applications\\ASP.NetCore\\FormsApp\\wwwroot\\img\\b14b6c03-d6df-4438-81bd-aff9b39b3140.jpg",
+      "PackagePath": "staticwebassets\\img\\b14b6c03-d6df-4438-81bd-aff9b39b3140.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fatih\\Documents\\ProgrammingApplications\\Web Applications\\ASP.NetCore\\FormsApp\\wwwroot\\img\\b217be8b-8527-49f1-86e5-ea8a0e1b25b1.jpg",
+      "PackagePath": "staticwebassets\\img\\b217be8b-8527-49f1-86e5-ea8a0e1b25b1.jpg"
     },
     {
       "Id": "C:\\Users\\fatih\\Documents\\ProgrammingApplications\\Web Applications\\ASP.NetCore\\FormsApp\\wwwroot\\img\\imageAvaiable.jpg",
