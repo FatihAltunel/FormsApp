@@ -46,8 +46,8 @@
                     <td>@Model.Products[i].Name</td>
                     <td>@Model.Products[i].Price₺</td>
                     <td>
-                        <p>is Product Active?</p>
-                        <input type="checkbox" asp-for="@Model.Products[i].IsActive"> 
+                        <label class="form-check-label">is Product Active?</label >
+                        <input class="form-check-input" type="checkbox" asp-for="@Model.Products[i].IsActive"> 
                     </td>
                     <td>
                         <a asp-action="Edit" asp-controller="Home" asp-route-id="@Model.Products[i].ProductId" class="btn btn-sm btn-primary">Edit</a>
