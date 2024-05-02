@@ -90,6 +90,7 @@ public class HomeController : Controller
         ViewBag.Categories = new SelectList(Repository.Categories,"CategoryId", "Name");
         return View(entity); 
     }   
+    [HttpPost]
     public async Task<IActionResult> Edit(int id, Product model, IFormFile? ProductImage){
         if(id!=model.ProductId){
             return NotFound();
